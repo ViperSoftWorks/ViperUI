@@ -2739,7 +2739,7 @@ function Viper:CreateWindow(WindowSettings)
 						tween(Button.UIStroke, {Color = viperGreenEnd})
 						wait(0.2)
 						if ButtonV.Hover then
-							tween(Button.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+							tween(Button.UIStroke, {Color = {Color = viperGreenEnd}})
 						else
 							tween(Button.UIStroke, {Color = Color3.fromRGB(64,61,76)})
 						end
@@ -2748,7 +2748,7 @@ function Viper:CreateWindow(WindowSettings)
 
 				Button["MouseEnter"]:Connect(function()
 					ButtonV.Hover = true
-					tween(Button.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+					tween(Button.UIStroke, {Color = {Color = viperGreenEnd}})
 				end)
 
 				Button["MouseLeave"]:Connect(function()
@@ -2932,7 +2932,7 @@ function Viper:CreateWindow(WindowSettings)
 				SliderSettings.Callback(SliderSettings.CurrentValue)
 
 				Slider["MouseEnter"]:Connect(function()
-					tween(Slider.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+					tween(Slider.UIStroke, {Color = {Color = viperGreenEnd}})
 				end)
 
 				Slider["MouseLeave"]:Connect(function()
@@ -3149,11 +3149,11 @@ function Viper:CreateWindow(WindowSettings)
 						Toggle.toggle.color.Enabled = false
 						Toggle.toggle.UIStroke.color.Enabled = false
 
-						Toggle.toggle.UIStroke.Color = Color3.fromRGB(57, 173, 52)
+						Toggle.toggle.UIStroke.Color = viperGreenMid
 
 						tween(Toggle.toggle, {BackgroundTransparency = 1})
 
-						tween(Toggle.toggle.val, {BackgroundColor3 = Color3.fromRGB(57, 173, 52), Position = UDim2.new(0,5,0.5,0), BackgroundTransparency = 0})
+						tween(Toggle.toggle.val, {BackgroundColor3 = viperGreenMid, Position = UDim2.new(0,5,0.5,0), BackgroundTransparency = 0})
 					end
 
 					ToggleV.CurrentValue = bool
@@ -3181,7 +3181,7 @@ function Viper:CreateWindow(WindowSettings)
 				end)
 
 				Toggle["MouseEnter"]:Connect(function()
-					tween(Toggle.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+					tween(Toggle.UIStroke, {Color = {Color = viperGreenEnd}})
 				end)
 
 				Toggle["MouseLeave"]:Connect(function()
@@ -3342,7 +3342,7 @@ function Viper:CreateWindow(WindowSettings)
 				end)
 
 				Bind["MouseEnter"]:Connect(function()
-					tween(Bind.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+					tween(Bind.UIStroke, {Color = {Color = viperGreenEnd}})
 				end)
 
 				Bind["MouseLeave"]:Connect(function()
@@ -3613,7 +3613,7 @@ function Viper:CreateWindow(WindowSettings)
 				end)
 
 				Input["MouseEnter"]:Connect(function()
-					tween(Input.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+					tween(Input.UIStroke, {Color = {Color = viperGreenEnd}})
 				end)
 
 				Input["MouseLeave"]:Connect(function()
@@ -3851,7 +3851,7 @@ function Viper:CreateWindow(WindowSettings)
 				end)
 
 				Dropdown["MouseEnter"]:Connect(function()
-					tween(Dropdown.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+					tween(Dropdown.UIStroke, {Color = {Color = viperGreenEnd}})
 				end)
 
 				Dropdown["MouseLeave"]:Connect(function()
@@ -4047,7 +4047,7 @@ function Viper:CreateWindow(WindowSettings)
 				Display.BackgroundTransparency = 0
 
 				ColorPicker["MouseEnter"]:Connect(function()
-					tween(ColorPicker.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+					tween(ColorPicker.UIStroke, {Color = {Color = viperGreenEnd}})
 				end)
 				ColorPicker["MouseLeave"]:Connect(function()
 					tween(ColorPicker.UIStroke, {Color = Color3.fromRGB(64,61,76)})
@@ -4333,7 +4333,7 @@ function Viper:CreateWindow(WindowSettings)
 					tween(Button.UIStroke, {Color = viperGreenEnd})
 					wait(0.2)
 					if ButtonV.Hover then
-						tween(Button.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+						tween(Button.UIStroke, {Color = {Color = viperGreenEnd}})
 					else
 						tween(Button.UIStroke, {Color = Color3.fromRGB(64,61,76)})
 					end
@@ -4342,7 +4342,7 @@ function Viper:CreateWindow(WindowSettings)
 
 			Button["MouseEnter"]:Connect(function()
 				ButtonV.Hover = true
-				tween(Button.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+				tween(Button.UIStroke, {Color = {Color = viperGreenEnd}})
 			end)
 
 			Button["MouseLeave"]:Connect(function()
@@ -4523,7 +4523,7 @@ function Viper:CreateWindow(WindowSettings)
 			SliderSettings.Callback(SliderSettings.CurrentValue)
 
 			Slider["MouseEnter"]:Connect(function()
-				tween(Slider.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+				tween(Slider.UIStroke, {Color = {Color = viperGreenEnd}})
 			end)
 
 			Slider["MouseLeave"]:Connect(function()
@@ -4739,11 +4739,11 @@ function Viper:CreateWindow(WindowSettings)
 					Toggle.toggle.color.Enabled = false
 					Toggle.toggle.UIStroke.color.Enabled = false
 
-					Toggle.toggle.UIStroke.Color = Color3.fromRGB(57, 173, 52)
+					Toggle.toggle.UIStroke.Color = viperGreenMid
 
 					tween(Toggle.toggle, {BackgroundTransparency = 1})
 
-					tween(Toggle.toggle.val, {BackgroundColor3 = Color3.fromRGB(57, 173, 52), Position = UDim2.new(0,5,0.5,0), BackgroundTransparency = 0})
+					tween(Toggle.toggle.val, {BackgroundColor3 = viperGreenMid, Position = UDim2.new(0,5,0.5,0), BackgroundTransparency = 0})
 				end
 
 				ToggleV.CurrentValue = bool
@@ -4771,7 +4771,7 @@ function Viper:CreateWindow(WindowSettings)
 			end)
 
 			Toggle["MouseEnter"]:Connect(function()
-				tween(Toggle.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+				tween(Toggle.UIStroke, {Color = {Color = viperGreenEnd}})
 			end)
 
 			Toggle["MouseLeave"]:Connect(function()
@@ -4931,7 +4931,7 @@ function Viper:CreateWindow(WindowSettings)
 			end)
 
 			Bind["MouseEnter"]:Connect(function()
-				tween(Bind.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+				tween(Bind.UIStroke, {Color = {Color = viperGreenEnd}})
 			end)
 
 			Bind["MouseLeave"]:Connect(function()
@@ -5144,7 +5144,7 @@ function Viper:CreateWindow(WindowSettings)
 			end)
 
 			Bind["MouseEnter"]:Connect(function()
-				tween(Bind.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+				tween(Bind.UIStroke, {Color = {Color = viperGreenEnd}})
 			end)
 
 			Bind["MouseLeave"]:Connect(function()
@@ -5395,7 +5395,7 @@ function Viper:CreateWindow(WindowSettings)
 			end)
 
 			Input["MouseEnter"]:Connect(function()
-				tween(Input.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+				tween(Input.UIStroke, {Color = {Color = viperGreenEnd}})
 			end)
 
 			Input["MouseLeave"]:Connect(function()
@@ -5632,7 +5632,7 @@ function Viper:CreateWindow(WindowSettings)
 			end)
 
 			Dropdown["MouseEnter"]:Connect(function()
-				tween(Dropdown.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+				tween(Dropdown.UIStroke, {Color = {Color = viperGreenEnd}})
 			end)
 
 			Dropdown["MouseLeave"]:Connect(function()
@@ -5827,7 +5827,7 @@ function Viper:CreateWindow(WindowSettings)
 			Display.BackgroundTransparency = 0
 
 			ColorPicker["MouseEnter"]:Connect(function()
-				tween(ColorPicker.UIStroke, {Color = Color3.fromRGB(87, 84, 104)})
+				tween(ColorPicker.UIStroke, {Color = {Color = viperGreenEnd}})
 			end)
 			ColorPicker["MouseLeave"]:Connect(function()
 				tween(ColorPicker.UIStroke, {Color = Color3.fromRGB(64,61,76)})
