@@ -2389,6 +2389,23 @@ function Viper:CreateWindow(WindowSettings)
 	Elements.Template.Visible = false
 	Navigation.Tabs["InActive Template"].LayoutOrder = 1000000000
 	Navigation.Tabs["InActive Template"].Visible = false
+	
+	local SliderTemplate = Elements.Template.Slider
+    SliderTemplate.Main.Progress.color.Color = Viper.ThemeGradient
+    SliderTemplate.Main.Progress.UIStroke.color.Color = Viper.ThemeGradient
+
+    local ToggleTemplate = Elements.Template.Toggle
+    ToggleTemplate.toggle.color.Color = Viper.ThemeGradient
+    ToggleTemplate.toggle.UIStroke.color.Color = Viper.ThemeGradient
+
+    local ToggleDescTemplate = Elements.Template.ToggleDesc
+    ToggleDescTemplate.toggle.color.Color = Viper.ThemeGradient
+    ToggleDescTemplate.toggle.UIStroke.color.Color = Viper.ThemeGradient
+    
+    -- Ensure the Home Tab's client info elements also use the green gradient
+    Elements.Home.detailsholder.dashboard.Client.color.Color = Viper.ThemeGradient
+    
+	local FirstTab = true
 
 	local FirstTab = true
 
