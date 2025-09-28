@@ -2389,23 +2389,39 @@ function Viper:CreateWindow(WindowSettings)
 	Elements.Template.Visible = false
 	Navigation.Tabs["InActive Template"].LayoutOrder = 1000000000
 	Navigation.Tabs["InActive Template"].Visible = false
-	
+
+    -- === TEMPLATE GREEN THEME PATCH ===
 	local SliderTemplate = Elements.Template.Slider
-    SliderTemplate.Main.Progress.color.Color = Viper.ThemeGradient
-    SliderTemplate.Main.Progress.UIStroke.color.Color = Viper.ThemeGradient
+    -- Check if 'color' exists before setting the color property
+    if SliderTemplate.Main.Progress:FindFirstChild("color") then
+        SliderTemplate.Main.Progress.color.Color = Viper.ThemeGradient
+    end
+    if SliderTemplate.Main.UIStroke:FindFirstChild("color") then
+        SliderTemplate.Main.Progress.UIStroke.color.Color = Viper.ThemeGradient
+    end
 
-    local ToggleTemplate = Elements.Template.Toggle
-    ToggleTemplate.toggle.color.Color = Viper.ThemeGradient
-    ToggleTemplate.toggle.UIStroke.color.Color = Viper.ThemeGradient
+	local ToggleTemplate = Elements.Template.Toggle
+    if ToggleTemplate.toggle:FindFirstChild("color") then
+        ToggleTemplate.toggle.color.Color = Viper.ThemeGradient
+    end
+    if ToggleTemplate.toggle.UIStroke:FindFirstChild("color") then
+        ToggleTemplate.toggle.UIStroke.color.Color = Viper.ThemeGradient
+    end
 
-    local ToggleDescTemplate = Elements.Template.ToggleDesc
-    ToggleDescTemplate.toggle.color.Color = Viper.ThemeGradient
-    ToggleDescTemplate.toggle.UIStroke.color.Color = Viper.ThemeGradient
-    
-    -- Ensure the Home Tab's client info elements also use the green gradient
-    Elements.Home.detailsholder.dashboard.Client.color.Color = Viper.ThemeGradient
-    
-	local FirstTab = true
+	local ToggleDescTemplate = Elements.Template.ToggleDesc
+    if ToggleDescTemplate.toggle:FindFirstChild("color") then
+        ToggleDescTemplate.toggle.color.Color = Viper.ThemeGradient
+    end
+    if ToggleDescTemplate.toggle.UIStroke:FindFirstChild("color") then
+        ToggleDescTemplate.toggle.UIStroke.color.Color = Viper.ThemeGradient
+    end
+
+    -- Home Tab Fix (if needed, ensure .color exists)
+    local HomeClient = Elements.Home.detailsholder.dashboard.Client
+    if HomeClient:FindFirstChild("color") then
+        HomeClient.color.Color = Viper.ThemeGradient
+    end
+    -- === END PATCH ===
 
 	local FirstTab = true
 
