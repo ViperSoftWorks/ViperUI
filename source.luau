@@ -4087,12 +4087,17 @@ function Viper:CreateWindow(WindowSettings)
 				Background.Size = closedsize
 				Display.BackgroundTransparency = 0
 
-				ColorPicker["MouseEnter"]:Connect(function()
-					tween(ColorPicker.UIStroke, {Color = viperGreenEnd})
-				end)
-				ColorPicker["MouseLeave"]:Connect(function()
-					tween(ColorPicker.UIStroke, {Color = viperGreenStart})
-				end)
+ColorPicker["MouseEnter"]:Connect(function()
+    if ColorPicker:FindFirstChild("UIStroke") then
+        tween(ColorPicker.UIStroke, {Color = viperGreenEnd})
+    end
+end)
+
+ColorPicker["MouseLeave"]:Connect(function()
+    if ColorPicker:FindFirstChild("UIStroke") then
+        tween(ColorPicker.UIStroke, {Color = viperGreenStart}) -- Use viperGreenStart for inactive
+    end
+end)
 
 				local function SafeCallback(param, c2)
 					local Success, Response = pcall(function()
