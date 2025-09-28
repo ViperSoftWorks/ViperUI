@@ -2391,32 +2391,40 @@ function Viper:CreateWindow(WindowSettings)
 	Navigation.Tabs["InActive Template"].Visible = false
 
     -- === TEMPLATE GREEN THEME PATCH ===
-	local SliderTemplate = Elements.Template.Slider
-    -- Check if 'color' exists before setting the color property
-    if SliderTemplate.Main.Progress:FindFirstChild("color") then
-        SliderTemplate.Main.Progress.color.Color = Viper.ThemeGradient
+    local SliderTemplate = Elements.Template.Slider
+    
+    -- 1. Progress Bar Fill (The main green bar)
+    local SliderProgress = SliderTemplate.Main.Progress
+    if SliderProgress:FindFirstChild("color") then
+        SliderProgress.color.Color = Viper.ThemeGradient
     end
-    if SliderTemplate.Main.UIStroke:FindFirstChild("color") then
-        SliderTemplate.Main.Progress.UIStroke.color.Color = Viper.ThemeGradient
+    
+    -- 2. Progress Bar UIStroke (The stroke *around* the fill bar)
+    if SliderProgress:FindFirstChild("UIStroke") and SliderProgress.UIStroke:FindFirstChild("color") then
+        SliderProgress.UIStroke.color.Color = Viper.ThemeGradient
     end
 
+    -- 3. Toggle (Regular)
 	local ToggleTemplate = Elements.Template.Toggle
-    if ToggleTemplate.toggle:FindFirstChild("color") then
-        ToggleTemplate.toggle.color.Color = Viper.ThemeGradient
+    local ToggleMain = ToggleTemplate.toggle
+    if ToggleMain:FindFirstChild("color") then
+        ToggleMain.color.Color = Viper.ThemeGradient
     end
-    if ToggleTemplate.toggle.UIStroke:FindFirstChild("color") then
-        ToggleTemplate.toggle.UIStroke.color.Color = Viper.ThemeGradient
+    if ToggleMain:FindFirstChild("UIStroke") and ToggleMain.UIStroke:FindFirstChild("color") then
+        ToggleMain.UIStroke.color.Color = Viper.ThemeGradient
     end
-
+    
+    -- 4. Toggle (Description version)
 	local ToggleDescTemplate = Elements.Template.ToggleDesc
-    if ToggleDescTemplate.toggle:FindFirstChild("color") then
-        ToggleDescTemplate.toggle.color.Color = Viper.ThemeGradient
+    local ToggleDescMain = ToggleDescTemplate.toggle
+    if ToggleDescMain:FindFirstChild("color") then
+        ToggleDescMain.color.Color = Viper.ThemeGradient
     end
-    if ToggleDescTemplate.toggle.UIStroke:FindFirstChild("color") then
-        ToggleDescTemplate.toggle.UIStroke.color.Color = Viper.ThemeGradient
+    if ToggleDescMain:FindFirstChild("UIStroke") and ToggleDescMain.UIStroke:FindFirstChild("color") then
+        ToggleDescMain.UIStroke.color.Color = Viper.ThemeGradient
     end
 
-    -- Home Tab Fix (if needed, ensure .color exists)
+    -- 5. Home Tab Client Indicator
     local HomeClient = Elements.Home.detailsholder.dashboard.Client
     if HomeClient:FindFirstChild("color") then
         HomeClient.color.Color = Viper.ThemeGradient
