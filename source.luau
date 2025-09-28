@@ -3653,9 +3653,9 @@ function Viper:CreateWindow(WindowSettings)
 					InputV.CurrentValue = Input.InputFrame.InputBox.Text				
 				end)
 
-				Input["MouseEnter"]:Connect(function()
-					tween(INPUT.UIStroke, {Color = viperGreenEnd})})
-				end)
+            Input["MouseEnter"]:Connect(function()
+				tween(INPUT.UIStroke, {Color = viperGreenEnd})
+			end)
 
 				Input["MouseLeave"]:Connect(function()
 					tween(Input.UIStroke, {Color = Color3.fromRGB(64,61,76)})
